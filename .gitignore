@@ -1,0 +1,10 @@
+*.pyc
+__pycache__
+mysite/settings.py
+
+static
+db.sqlite3
+media_cdn
+media
+
+djangoprojectenv
