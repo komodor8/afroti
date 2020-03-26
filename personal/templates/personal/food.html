@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center marb-35">
-                <h1 class="header-h">Poulet roti</h1>
+                <h1 class="header-h">Plats à emporter</h1>
                 <p class="header-p">Maison Moraud vous présente une volaille à chair blanche, rustique, tendre et goûteuse. Cuite à la rôtissoire, elle est arrosée de son jus afin d'obtenir une viande moelleuse.</p>
             </div>
             <div class="col-md-1"></div>
@@ -18,14 +18,16 @@
 </section>
 
 <section class="container">
-    <select id="homeSelector" class="mb-5">
-        <option value="home1">Poulet standard</option>
-        <option value="home2">Superieur</option>
-        <option value="home3">Fermier</option>
-        <option value="home4">Accompagnement</option>
+    <select id="foodSelector" class="mb-5">
+        <option value="food1">Couscous Royal</option>
+        <option value="food2">Couscous simple</option>
+        <option value="food3">Tajine viande</option>
+        <option value="food4">Tajine pomme de terre</option>
+        <option value="food5">Brochette + salade</option>
+        <option value="food6">Samoussa + salade</option>
     </select>
 
-    <div id="home1" class="container food" style="display:block; ">
+    <div id="food1" class="container food" style="display:block; ">
         <div class="row">
             <div class="col-sm">
                 <img src="{% static 'img/res01.jpg' %}" width="400px" alt="">
@@ -33,23 +35,24 @@
             <div class="col-sm">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Poulet 3/4 personnes</h5>
-                        <h6 class="card-subtitle mb-2 text-muted"></h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title">Couscous Royal</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Some quick example text</h6>
+                        <p class="card-text">Merguez, boulette de viande, poulet</p>
+                        <h4>Prix: 20 € / personne</h4>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="home2" class="container food" style="display:none">
+    <div id="food2" class="container food" style="display:none">
         <div class="row">
             <div class="col-lg-6">
                 <img src="{% static 'img/res01.jpg' %}" width="400px" alt="">
             </div>
             <div class="col-lg-6 card">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Couscous simple au poulet</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
@@ -57,29 +60,59 @@
         </div>
     </div>
 
-    <div id="home3" class="container food" style="display:none">
+    <div id="food3" class="container food" style="display:none">
         <div class="row">
             <div class="col-lg-6">
                 <img src="{% static 'img/res01.jpg' %}" width="400px" alt="">
             </div>
             <div class="col-lg-6 card">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title">Tajine</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Viande au choix</h6>
+                    <p class="card-text">agneau - veau - boeuf - poulet aux olives</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="home4" class="container food" style="display:none">
+    <div id="food4" class="container food" style="display:none">
         <div class="row">
             <div class="col-lg-6">
                 <img src="{% static 'img/res01.jpg' %}" width="400px" alt="">
             </div>
             <div class="col-lg-6 card">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Tajine 4</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Viande et pruneau au choix</h6>
+                    <p class="card-text">Pomme de terre olive ou pruneau</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="food5" class="container food" style="display:none">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="{% static 'img/res01.jpg' %}" width="400px" alt="">
+            </div>
+            <div class="col-lg-6 card">
+                <div class="card-body">
+                    <h5 class="card-title">Brochette + salade composée</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Viande de veau ou kefta (viande hachée)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="food6" class="container food" style="display:none">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="{% static 'img/res01.jpg' %}" width="400px" alt="">
+            </div>
+            <div class="col-lg-6 card">
+                <div class="card-body">
+                    <h5 class="card-title">Samoussa + salade</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
@@ -103,7 +136,7 @@
 
           <div class="breakfast menu-restaurant">
             <span class="clearfix">
-              <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Poulet Fermier Label Rouge</a>
+              <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Couscous royal</a>
               <span style="left: 166px; right: 44px;" class="menu-line"></span>
               <span class="menu-price">17,90 €</span>
             </span>
@@ -112,7 +145,7 @@
 
           <div class="breakfast menu-restaurant">
             <span class="clearfix">
-              <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Poulet certifié</a>
+              <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Couscous</a>
               <span style="left: 166px; right: 44px;" class="menu-line"></span>
               <span class="menu-price">12,90 €</span>
             </span>
@@ -121,7 +154,7 @@
 
           <div class="breakfast menu-restaurant">
             <span class="clearfix">
-              <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Poule 3/4 personnes</a>
+              <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Tajine</a>
               <span style="left: 166px; right: 44px;" class="menu-line"></span>
               <span class="menu-price">8,90 €</span>
             </span>
@@ -130,7 +163,16 @@
 
           <div class="breakfast menu-restaurant">
             <span class="clearfix">
-              <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Pomme de terre</a>
+              <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">brochette</a>
+              <span style="left: 166px; right: 44px;" class="menu-line"></span>
+              <span class="menu-price">3 € / 5 €</span>
+            </span>
+            <span class="menu-subtitle">Petite ou grande barquette</span>
+          </div>
+
+          <div class="breakfast menu-restaurant">
+            <span class="clearfix">
+              <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">samoussa</a>
               <span style="left: 166px; right: 44px;" class="menu-line"></span>
               <span class="menu-price">3 € / 5 €</span>
             </span>
@@ -145,7 +187,7 @@
 
 <script>
     $(function() {
-        $('#homeSelector').change(function(){
+        $('#foodSelector').change(function(){
             $('.food').hide();
             $('#' + $(this).val()).show();
         });

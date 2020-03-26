@@ -1,29 +1,35 @@
 {% load static %}
-<!-- Header -->
-  <section id="banner">
-    <div class="bg-color">
-      <header id="header">
-        <div class="container">
-          <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#about">About</a>
-            <a href="#event">Event</a>
-            <a href="#menu-list">Menu</a>
-            <a href="#contact">Book a table</a>
-          </div>
-          <!-- Use any element to open the sidenav -->
-          <span onclick="openNav()" class="pull-right menu-icon">☰</span>
-        </div>
-      </header>
-      <div class="container">
-        <div class="row">
-          <div class="inner text-center">
-            <h1 class="logo-name">Delicious</h1>
-            <h2>Food To fit your lifestyle & health.</h2>
-            <p>Specialized in Indian Cuisine!!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+        <img src="{% static 'img/vf.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">AF ROTI</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">AF ROTI</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">POULET ROTI</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/plats-a-emporter/">PLAT A EMPORTER</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/gateaux/">GATEAUX</a>
+            </li>
+        </ul>
+  </div>
+</nav>
