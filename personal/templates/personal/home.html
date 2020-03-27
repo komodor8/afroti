@@ -4,144 +4,163 @@
 
 {% block content %}
 
-<section id="about" class="section-padding">
+<section class="section-padding">
+    <div class="col-md-12 text-center">
+        <h1 class="header-h mb-5">Rôtisseur AF Roti</h1>
         <div class="container">
-                <div class="row">
-                        <div class="col-md-12 text-center marb-35">
-                                <h1 class="header-h">Poulet roti</h1>
-                                <p class="header-p">Maison Moraud vous présente une volaille à chair blanche, rustique, tendre et goûteuse. Cuite à la rôtissoire, elle est arrosée de son jus afin d'obtenir une viande moelleuse.</p>
-                        </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-1"></div>
-                </div>
-        </div>
-</section>
+            <h2>Où nous trouver ?</h2>
+            <div class="d-flex flex-row justify-content-between flex-wrap">
 
-<section class="container">
-        <select id="homeSelector" class="mb-5">
-                <option value="home1">Poulet 4 personnes</option>
-                <option value="home2">Superieur</option>
-                <option value="home3">Fermier</option>
-                <option value="home4">Accompagnement</option>
-        </select>
-
-        <div id="home1" class="container home" style="display:block; ">
-                <div class="row">
-                        <div class="col-sm">
-                                <img src="{% static 'img/res01.jpg' %}" width="400px" alt="">
-                        </div>
-                        <div class="col-sm">
-                                <div class="card">
-                                        <div class="card-body">
-                                                <h5 class="card-title">Poulet 3/4 personnes</h5>
-                                                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
-        </div>
-
-        <div id="home2" class="container home" style="display:none">
-                <div class="row">
-                        <div class="col-lg-6">
-                                <img src="{% static 'img/res01.jpg' %}" width="400px" alt="">
-                        </div>
-                        <div class="col-lg-6 card">
-                                <div class="card-body">
-                                        <h5 class="card-title">Supérieur</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                        </div>
-                </div>
-        </div>
-
-        <div id="home3" class="container home" style="display:none">
-                <div class="row">
-                        <div class="col-lg-6">
-                                <img src="{% static 'img/res01.jpg' %}" width="400px" alt="">
-                        </div>
-                        <div class="col-lg-6 card">
-                                <div class="card-body">
-                                        <h5 class="card-title">Fermier</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                        </div>
-                </div>
-        </div>
-
-        <div id="home4" class="container home" style="display:none">
-                <div class="row">
-                        <div class="col-lg-6">
-                                <img src="{% static 'img/res01.jpg' %}" width="400px" alt="">
-                        </div>
-                        <div class="col-lg-6 card">
-                                <div class="card-body">
-                                        <h5 class="card-title">Accompagnement</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                        </div>
-                </div>
-        </div>
-
-</section>
-
-
-    <section id="menu-list" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center marb-35">
-                    <h1 class="header-h">Menu List</h1>
-                    <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                        <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
-                </div>
-
-                <div id="menu-wrapper">
-
-                    <div class="breakfast menu-restaurant">
-                        <span class="clearfix">
-                            <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Poulet Fermier Label Rouge</a>
-                            <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                            <span class="menu-price">17,90 €</span>
-                        </span>
-                        <span class="menu-subtitle">Poulet Fermier Label rouge</span>
+                <div class="card col-md-4" style="width: 18rem;">
+                    <img class="card-img-top" src="{% static 'img/location.jpg' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Marché de Nuits-saint-Georges les vendredis</p>
                     </div>
-
-                    <div class="breakfast menu-restaurant">
-                        <span class="clearfix">
-                            <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Poulet certifié</a>
-                            <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                            <span class="menu-price">12,90 €</span>
-                        </span>
-                        <span class="menu-subtitle">Nouriture Bio - élevé au grain</span>
-                    </div>
-
-                    <div class="breakfast menu-restaurant">
-                        <span class="clearfix">
-                            <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Poule 3/4 personnes</a>
-                            <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                            <span class="menu-price">8,90 €</span>
-                        </span>
-                        <span class="menu-subtitle">Poulet d'origine francaise</span>
-                    </div>
-
-                    <div class="breakfast menu-restaurant">
-                        <span class="clearfix">
-                            <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Pomme de terre</a>
-                            <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                            <span class="menu-price">3 € / 5 €</span>
-                        </span>
-                        <span class="menu-subtitle">Petite ou grande barquette</span>
-                    </div>
-
                 </div>
 
+                <div class="card col-md-4" style="width: 18rem;">
+                    <img class="card-img-top" src="{% static 'img/location.jpg' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Marché de Beaune les samedis</p>
+                    </div>
+                </div>
+
+                <div class="card col-md-4" style="width: 18rem;">
+                    <img class="card-img-top" src="{% static 'img/location.jpg' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Marché de Quetigny les dimanche</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-1"></div>
+
+</section>
+
+<section class="section-padding container">
+    <div class="col-md-12 text-center">
+        <h1 class="header-h mb-5">Que choisir ?</h1>
+    </div>
+    <select id="homeSelector" class="mb-5">
+            <option value="home1">Poulet 4 personnes</option>
+            <option value="home2">Superieur</option>
+            <option value="home3">Fermier</option>
+            <option value="home4">Accompagnement</option>
+    </select>
+
+    <div id="home1" class="container home" style="display:block; ">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="{% static 'img/res01.jpg' %}" alt="Nature" class="responsiveImage" width="600">
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Poulet 3/4 personnes</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="home2" class="container home" style="display:none">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="{% static 'img/res01.jpg' %}" alt="Nature" class="responsiveImage" width="600">
+            </div>
+            <div class="col-lg-6 card">
+                <div class="card-body">
+                    <h5 class="card-title">Supérieur</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="home3" class="container home" style="display:none">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="{% static 'img/res01.jpg' %}" alt="Nature" class="responsiveImage" width="600">
+            </div>
+            <div class="col-lg-6 card">
+                <div class="card-body">
+                        <h5 class="card-title">Fermier</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="home4" class="container home" style="display:none">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="{% static 'img/res01.jpg' %}" alt="Nature" class="responsiveImage" width="600">
+            </div>
+            <div class="col-lg-6 card">
+                <div class="card-body">
+                    <h5 class="card-title">Accompagnement</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section id="menu-list" class="container section-padding">
+    <div class="col-md-12 text-center marb-35">
+        <h1 class="header-h">Au menu</h1>
+    </div>
+
+    <div class="col-md-12 d-flex flex-row justify-content-around flex-wrap">
+
+        <div class="col-sm-6 menu-restaurant">
+            <span class="clearfix">
+                <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Poulet Fermier</a>
+                <span style="left: 166px; right: 44px;" class="menu-line"></span>
+                <span class="menu-price">17,90 €</span>
+            </span>
+            <span class="menu-subtitle">Poulet Fermier Label rouge</span>
+        </div>
+
+        <div class="col-sm-6 menu-restaurant">
+            <span class="clearfix">
+                <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Poulet certifié</a>
+                <span style="left: 166px; right: 44px;" class="menu-line"></span>
+                <span class="menu-price">12,90 €</span>
+            </span>
+            <span class="menu-subtitle">Nouriture Bio - élevé au grain</span>
+        </div>
+
+        <div class="col-sm-6 menu-restaurant">
+            <span class="clearfix">
+                <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Poulet 3/4 pers</a>
+                <span style="left: 166px; right: 44px;" class="menu-line"></span>
+                <span class="menu-price">8,90 €</span>
+            </span>
+            <span class="menu-subtitle">Poulet d'origine francaise</span>
+        </div>
+
+        <div class="col-sm-6 menu-restaurant">
+            <span class="clearfix">
+                <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Pomme de terre</a>
+                <span style="left: 166px; right: 44px;" class="menu-line"></span>
+                <span class="menu-price">3 € / 5 €</span>
+            </span>
+            <span class="menu-subtitle">Petite ou grande barquette</span>
+        </div>
+
+    </div>
+
+</section>
 
 <script>
     $(function() {
