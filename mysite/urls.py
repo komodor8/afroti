@@ -31,11 +31,11 @@ from account.views import (
 
 urlpatterns = [
     path('', include('personal.urls')),
-    # path('account/', account_view, name="account"),
-    # path('admin/', admin.site.urls),
+    path('account/', account_view, name="account"),
+    path('admin/', admin.site.urls),
     # path('blog/', include('blog.urls', 'blog')),
-    # path('login/', login_view, name="login"),
-    # path('logout/', logout_view, name="logout"),
+    path('login/', login_view, name="login"),
+    path('logout/', logout_view, name="logout"),
     # path('must_authenticate/', must_authenticate_view, name="must_authenticate"),
     # path('register/', registration_view, name="register"),
 

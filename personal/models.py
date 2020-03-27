@@ -1,23 +1,18 @@
 from django.db import models
 
-# #Two tuple structure
-# #The first element in each tuple is the value that will be stored in the database. The second element is displayed by the field’s form widget.
-# #Tuple
-# PRIORITY = [
-# 	('L', 'Low'), #Tuple1
-# 	('M', 'Medium'), #Tuple2
-# 	('H', 'High'), #Tuple3
-# ]
 
-# class Question(models.Model):
-# 	title		 			= models.CharField(max_length=60)
-# 	question 				= models.TextField(max_length=400)
-# 	priority 				= models.CharField(max_length=1, choices=PRIORITY)
+class Categorie(models.Model):
+    categorie_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
 
-# 	def __str__(self):
-# 		return self.title
+    def __str__(self):
+        return self.categorie_text
 
+class Product(models.Model):
+    categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    decription = models.CharField(max_length=200)
+    price = models.IntegerField(default=0)
 
-# 	class Meta:
-# 		verbose_name = 'The Question'
-# 		verbose_name_plural = 'Questions from People'
+    def __str__(self):
+        return self.name

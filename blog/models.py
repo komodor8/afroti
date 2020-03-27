@@ -25,7 +25,7 @@ class BlogPost(models.Model):
 
 @receiver(post_delete, sender=BlogPost)
 def submission_delete(sender, instance, **kwargs):
-    instance.image.delete(False) 
+    instance.image.delete(False)
 
 def pre_save_blog_post_receiver(sender, instance, *args, **kwargs):
 	if not instance.slug:
