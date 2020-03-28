@@ -21,16 +21,21 @@
     <div class="col-md-12 text-center">
         <h1 class="header-h mb-5">Que choisir ?</h1>
     </div>
-    <select id="foodSelector" class="mb-5">
-        <option value="food1">Couscous Royal</option>
-        <option value="food2">Couscous simple</option>
-        <option value="food3">Tajine viande</option>
-        <option value="food4">Tajine pomme de terre</option>
-        <option value="food5">Brochette + salade</option>
-        <option value="food6">Samoussa + salade</option>
-    </select>
+    <div class="mb-5">
+        <button type="button" value="food0" class="btn btn-outline-dark">Test</button>
+        {% for obj in object_list %}
+        {% if obj.main_product == True  %}
+            <button
+                type="button"
+                value="food{{ obj.id }}"
+                class="btn btn-outline-dark">
+                {{ obj.name }}
+            </button>
+        {% endif %}
+        {% endfor %}
+    </div>
 
-    <div id="food1" class="container food" style="display:block; ">
+    <div id="food0" class="container food" style="display:block; ">
         <div class="row">
             <div class="col-sm-6">
                 <img src="{% static 'img/res01.jpg' %}" alt="Nature" class="responsiveImage" width="600">
@@ -50,7 +55,9 @@
         </div>
     </div>
 
-    <div id="food2" class="container food" style="display:none">
+    {% for obj in object_list %}
+    {% if obj.main_product == True  %}
+    <div id="food{{ obj.id }}" class="container food" style="display:none">
         <div class="row">
             <div class="col-sm-6">
                 <img src="{% static 'img/res01.jpg' %}" alt="Nature" class="responsiveImage" width="600">
@@ -58,161 +65,29 @@
             <div class="col-sm-6 card">
                 <div class="card-body">
                     <div>
-                        <h5 class="card-title">Couscous simple au poulet</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title">{{ obj.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ obj.subtitle }}</h6>
+                        <p class="card-text">{{ obj.description }}</p>
                     </div>
-                    <h4>Prix: 5 € la grande barquette</h4>
+                    <h4>{{ obj.price }}</h4>
                 </div>
             </div>
         </div>
     </div>
-
-    <div id="food3" class="container food" style="display:none">
-        <div class="row">
-            <div class="col-sm-6">
-                <img src="{% static 'img/res01.jpg' %}" alt="Nature" class="responsiveImage" width="600">
-            </div>
-            <div class="col-sm-6 card">
-                <div class="card-body">
-                    <div>
-                        <h5 class="card-title">Tajine</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Viande au choix</h6>
-                        <p class="card-text">agneau - veau - boeuf - poulet aux olives</p>
-                    </div>
-                    <h4>Prix: 5 € la grande barquette</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="food4" class="container food" style="display:none">
-        <div class="row">
-            <div class="col-sm-6">
-                <img src="{% static 'img/res01.jpg' %}" alt="Nature" class="responsiveImage" width="600">
-            </div>
-            <div class="col-sm-6 card">
-                <div class="card-body">
-                    <div>
-                        <h5 class="card-title">Tajine 4</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Viande et pruneau au choix</h6>
-                        <p class="card-text">Pomme de terre olive ou pruneau</p>
-                    </div>
-                    <h4>Prix: 5 € la grande barquette</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="food5" class="container food" style="display:none">
-        <div class="row">
-            <div class="col-sm-6">
-                <img src="{% static 'img/res01.jpg' %}" alt="Nature" class="responsiveImage" width="600">
-            </div>
-            <div class="col-sm-6 card">
-                <div class="card-body">
-                    <div>
-                        <h5 class="card-title">Brochette + salade composée</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Viande de veau ou kefta (viande hachée)</p>
-                    </div>
-                    <h4>Prix: 5 € la grande barquette</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="food6" class="container food" style="display:none">
-        <div class="row">
-            <div class="col-sm-6">
-                <img src="{% static 'img/res01.jpg' %}" alt="Nature" class="responsiveImage" width="600">
-            </div>
-            <div class="col-sm-6 card">
-                <div class="card-body">
-                    <div>
-                        <h5 class="card-title">Samoussa + salade</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <h4>Prix: 5 € la grande barquette</h4>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endif %}
+    {% endfor %}
 
 </section>
 
 
-<section id="menu-list" class="container section-padding">
-    <div class="col-md-12 text-center marb-35">
-        <h1 class="header-h">Au menu</h1>
-    </div>
+{% include "snippets/menu.html" %}
 
-    <div class="col-md-12 d-flex flex-row justify-content-around flex-wrap">
-
-        <div class="col-sm-6 menu-restaurant">
-            <span class="clearfix">
-                <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Couscous royal</a>
-                <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                <span class="menu-price">17,90 €</span>
-            </span>
-            <span class="menu-subtitle">Merguez, boulettes de viande, poulet</span>
-        </div>
-
-        <div class="col-sm-6 menu-restaurant">
-            <span class="clearfix">
-                <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Couscous</a>
-                <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                <span class="menu-price">17,90 €</span>
-            </span>
-            <span class="menu-subtitle">Poulet</span>
-        </div>
-
-        <div class="col-sm-6 menu-restaurant">
-            <span class="clearfix">
-                <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Tajine</a>
-                <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                <span class="menu-price">17,90 €</span>
-            </span>
-            <span class="menu-subtitle">Viande au choix: Agneau - boeuf - poulet aux olives</span>
-        </div>
-
-        <div class="col-sm-6 menu-restaurant">
-            <span class="clearfix">
-                <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Tajine pruneaux</a>
-                <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                <span class="menu-price">17,90 €</span>
-            </span>
-            <span class="menu-subtitle">Pomme de terre ou pruneau</span>
-        </div>
-
-        <div class="col-sm-6 menu-restaurant">
-            <span class="clearfix">
-                <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">brochettes accompagnées d'une salade</a>
-                <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                <span class="menu-price">17,90 €</span>
-            </span>
-            <span class="menu-subtitle">viande de veau ou kefta (viande hachée) - Salade composée</span>
-        </div>
-
-        <div class="col-sm-6 menu-restaurant">
-            <span class="clearfix">
-                <a class="menu-title" href="#" data-meal-img="assets/img/restaurant/rib.jpg">Samoussas accompagnées d'une salade</a>
-                <span style="left: 166px; right: 44px;" class="menu-line"></span>
-                <span class="menu-price">17,90 €</span>
-            </span>
-            <span class="menu-subtitle">Salade composée</span>
-        </div>
-
-    </div>
-
-</section>
 
 <script>
     $(function() {
-        $('#foodSelector').change(function(){
-            $('.food').hide();
-            $('#' + $(this).val()).show();
+        $('button.btn-outline-dark').click(function(event){
+                $('.home').hide();
+                $('#' + $(this).val()).show();
         });
 });
 </script>
