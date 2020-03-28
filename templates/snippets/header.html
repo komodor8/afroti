@@ -1,28 +1,28 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">
-        <img src="{% static 'img/vf.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-4">
+    <a class="navbar-brand" href="/home">
+        <img src="{% static 'img/vf.png' %}" width="60" height="60" class="d-inline-block align-top" alt="">
     </a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/">AF ROTI</a>
+                <a class="nav-link" href="/home">AF ROTI</a>
             </li>
         </ul>
     </div>
 </nav>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-  <a class="navbar-brand" href="/">AF ROTI</a>
+  <a class="navbar-brand" href="/home">AF ROTI</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/">POULET ROTI</a>
+                <a class="nav-link" href="/home/">POULET ROTI</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/plats-a-emporter/">PLAT A EMPORTER</a>
@@ -37,11 +37,8 @@
 <script >
     $(function(){
         var current = location.pathname;
-        console.log("current", current);
         $('.navbar-nav li a').each(function(){
             var $this = $(this);
-            console.log("$this.attr('href')", $this.attr('href'));
-            console.log("$this.attr('href').indexOf(current)", $this.attr('href').indexOf(current));
             if($this.attr('href').indexOf(current) !== -1){
                 $this.addClass('active');
             }

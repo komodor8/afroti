@@ -4,20 +4,20 @@
 
 {% block content %}
 
-<section class="section-padding">
+<section class="py-5">
     <div class="col-md-12 text-center">
-        <h1 class="header-h mb-5">Rôtisseur AF Roti</h1>
+        <h1 class="mb-5">Rôtisseur AF Roti</h1>
         <h2>Où nous trouver ?</h2>
         <div class="d-flex flex-row justify-content-around flex-wrap">
             {% for market in markets %}
-                <div class="card" style="width: 13rem;">
+                <div class="card" style="width: 15rem;">
                 <img class="card-img-top" src="{% static 'img/location.jpg' %}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ market.name }}</h5>
-                    <p class="card-text">Tous les {{ market.day }}</p>
+                    <p class="card-text">De 8h à 13h</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">De 8h à 13h</li>
+                    <li class="list-group-item">Tous les {{ market.day }}</li>
                 </ul>
             </div>
             {% endfor %}
@@ -29,9 +29,9 @@
 </section>
 
 <hr>
-<section class="section-padding container">
+<section class="py-5 container">
     <div class="col-md-12 text-center">
-        <h1 class="header-h mb-5">Voici ce que nous vous proposons</h1>
+        <h1 class="mb-5">Voici ce que nous vous proposons</h1>
     </div>
     <div class="mb-5">
         <button
@@ -62,10 +62,10 @@
                 <div class="d-flex flex-column justify-content-between card-body g-border">
                     <div>
                         <h1 class="card-title">Poulet 3/4 personnes</h1>
-                        <h6 class="card-subtitle mb-2 text-muted"></h6>
-                        <p class="card-text"></p>
+                        <h6 class="card-subtitle mb-2 text-muted">subtitle</h6>
+                        <p class="card-text">description</p>
                     </div>
-                    <h4>Prix: 8,90 €</h4>
+                    <h4>8.90 €</h4>
                 </div>
             </div>
         </div>
