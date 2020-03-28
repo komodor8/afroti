@@ -5,15 +5,13 @@
 {% block content %}
 
 <section id="about" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center marb-35">
-                <h1 class="header-h">Gâteaux traditionels</h1>
-                <p class="header-p"></p>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-1"></div>
+    <div class="row">
+        <div class="col-md-12 text-center marb-35">
+            <h1 class="header-h">Gâteaux traditionels</h1>
+            <p class="header-p"></p>
         </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
     </div>
 </section>
 
@@ -23,26 +21,26 @@
     </div>
 
     <div class="mb-5">
-      <button type="button" value="cake0" class="btn btn-outline-dark">Gateau arabes 1</button>
+      <button type="button" value="cake0" class="btn btn-outline-dark p-1">Gateau arabes 1</button>
       {% for obj in object_list %}
       {% if obj.main_product == True  %}
         <button
             type="button"
             value="cake{{ obj.id }}"
-            class="btn btn-outline-dark">
+            class="btn btn-outline-dark p-1">
             {{ obj.name }}
         </button>
         {% endif %}
         {% endfor %}
     </div>
 
-    <div id="cake0" class="container food" style="display:block; ">
+    <div id="cake0" class="food" style="display:block; ">
         <div class="row">
             <div class="col-sm-6">
                 <img src="{% static 'img/gateau1.jpg' %}" alt="Nature" class="responsiveImage" width="600">
             </div>
             <div class="col-sm-6 card">
-                <div class="d-flex flex-column justify-content-between card-body">
+                <div class="d-flex flex-column justify-content-between card-body g-border">
                     <div>
                         <h5 class="card-title">Corne de gazelle</h5>
                         <h6 class="card-subtitle mb-2 text-muted"></h6>
@@ -56,7 +54,7 @@
 
     {% for obj in object_list %}
     {% if obj.main_product == True  %}
-        <div id="cake{{ obj.id }}" class="container food" style="display:none">
+        <div id="cake{{ obj.id }}" class="food" style="display:none">
         <div class="row">
             <div class="col-sm-6">
                 <img src="{% static 'img/gateau1.jpg' %}" alt="Nature" class="responsiveImage" width="600">

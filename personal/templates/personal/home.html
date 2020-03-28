@@ -7,22 +7,20 @@
 <section class="section-padding">
     <div class="col-md-12 text-center">
         <h1 class="header-h mb-5">Rôtisseur AF Roti</h1>
-        <div class="container">
-            <h2>Où nous trouver ?</h2>
-            <div class="d-flex flex-row justify-content-around flex-wrap">
-                {% for market in markets %}
-                    <div class="card" style="width: 13rem;">
-                    <img class="card-img-top" src="{% static 'img/location.jpg' %}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ market.name }}</h5>
-                        <p class="card-text">Tous les {{ market.day }}</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">De 8h à 13h</li>
-                    </ul>
+        <h2>Où nous trouver ?</h2>
+        <div class="d-flex flex-row justify-content-around flex-wrap">
+            {% for market in markets %}
+                <div class="card" style="width: 13rem;">
+                <img class="card-img-top" src="{% static 'img/location.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ market.name }}</h5>
+                    <p class="card-text">Tous les {{ market.day }}</p>
                 </div>
-                {% endfor %}
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">De 8h à 13h</li>
+                </ul>
             </div>
+            {% endfor %}
         </div>
     </div>
     <div class="col-md-1"></div>
@@ -30,19 +28,24 @@
 
 </section>
 
-
-<section class="section-padding container">
+<hr>
+<section class="section-padding">
     <div class="col-md-12 text-center">
         <h1 class="header-h mb-5">Voici ce que nous vous proposons</h1>
     </div>
     <div class="mb-5">
-        <button type="button" value="home0" class="btn btn-outline-dark">Test</button>
+        <button
+            type="button"
+            value="home0"
+            class="btn btn-outline-dark p-1">
+            Poulet 3/4 personnes
+        </button>
         {% for obj in object_list %}
         {% if obj.main_product == True  %}
             <button
                 type="button"
                 value="home{{ obj.id }}"
-                class="btn btn-outline-dark">
+                class="btn btn-outline-dark p-1">
                 {{ obj.name }}
             </button>
         {% endif %}
@@ -50,13 +53,13 @@
     </div>
 
 
-    <div id="home0" class="container home" style="display:block; ">
+    <div id="home0" class="home" style="display:block; ">
         <div class="row">
             <div class="col-sm-6">
                 <img src="{% static 'img/roti.jpg' %}" alt="Nature" class="responsiveImage" width="600">
             </div>
-            <div class="col-sm-6 card">
-                <div class="d-flex flex-column justify-content-between card-body">
+            <div class="col-sm-6 card ">
+                <div class="d-flex flex-column justify-content-between card-body g-border">
                     <div>
                         <h1 class="card-title">Poulet 3/4 personnes</h1>
                         <h6 class="card-subtitle mb-2 text-muted"></h6>
@@ -70,13 +73,13 @@
 
     {% for obj in object_list %}
     {% if obj.main_product == True  %}
-        <div id="home{{obj.id}}" class="container home" style="display:none; ">
+        <div id="home{{obj.id}}" class="home" style="display:none; ">
             <div class="row">
                 <div class="col-sm-6">
                     <img src="{% static 'img/roti.jpg' %}" alt="Nature" class="responsiveImage" width="600">
                 </div>
                 <div class="card col-sm-6">
-                    <div class="d-flex flex-column justify-content-between card-body">
+                    <div class="d-flex flex-column justify-content-between card-body g-border">
                         <div>
                             <h1 class="card-title">{{ obj.name }}</h1>
                             <h6 class="card-subtitle mb-2 text-muted">{{ obj.subtitle }}</h6>
