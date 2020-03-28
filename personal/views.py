@@ -4,16 +4,16 @@ from .models import Product
 class IndexSplashScreen(generic.ListView):
     template_name = 'personal/home.html'
     model = Product
-    queryset = Product.objects.filter(categorie='1')
+    queryset = Product.objects.filter(categorie=1)
 
 
-class IndexFood(generic.TemplateView):
+class IndexFood(generic.ListView):
     template_name = 'personal/food.html'
     model = Product
-    queryset = Product.objects.filter(categorie='2')
+    queryset = Product.objects.filter(categorie=3)
 
 
-class IndexCake(generic.TemplateView):
+class IndexCake(generic.ListView):
     template_name = 'personal/cake.html'
     model = Product
-    queryset = Product.objects.filter(categorie='3')
+    queryset = Product.objects.filter(categorie=2)
