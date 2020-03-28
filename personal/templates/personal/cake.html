@@ -21,9 +21,11 @@
     </div>
 
     <div class="mb-5">
-      <button type="button" value="cake0" class="btn btn-outline-dark p-1">Gateau arabes 1</button>
-      {% for obj in object_list %}
-      {% if obj.main_product == True  %}
+        <!-- be careful to have value="cake0" here for the jquery  -->
+        <button type="button" value="cake0" class="btn btn-outline-dark p-1">Gateau arabes 1</button>
+        {% for obj in object_list %}
+        {% if obj.main_product == True  %}
+        <!-- be careful to have dynamic here for the jquery  -->
         <button
             type="button"
             value="cake{{ obj.id }}"
@@ -34,6 +36,7 @@
         {% endfor %}
     </div>
 
+    <!-- be careful to have class="cake" here for the jquery  -->
     <div id="cake0" class="cake" style="display:block; ">
         <div class="row">
             <div class="col-sm-6 p-2">
@@ -54,6 +57,7 @@
 
     {% for obj in object_list %}
     {% if obj.main_product == True  %}
+    <!-- be careful to have class="cake" here for the jquery  -->
         <div id="cake{{ obj.id }}" class="cake" style="display:none">
         <div class="row">
             <div class="col-sm-6 p-2">

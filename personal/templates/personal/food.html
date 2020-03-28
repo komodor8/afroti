@@ -20,19 +20,22 @@
         <h1 class="mb-5 head-title-title py-3">Besoins d'idées</h1>
     </div>
     <div class="mb-5">
+        <!-- be careful to have value="food0" here for the jquery  -->
         <button type="button" value="food0" class="btn btn-outline-dark p-1">Test</button>
         {% for obj in object_list %}
         {% if obj.main_product == True  %}
-            <button
-                type="button"
-                value="food{{ obj.id }}"
-                class="btn btn-outline-dark p-1">
-                {{ obj.name }}
-            </button>
+        <!-- be careful to have dynamic here for the jquery  -->
+        <button
+            type="button"
+            value="food{{ obj.id }}"
+            class="btn btn-outline-dark p-1">
+            {{ obj.name }}
+        </button>
         {% endif %}
         {% endfor %}
     </div>
 
+    <!-- be careful to have class="food" here for the jquery  -->
     <div id="food0" class="food" style="display:block; ">
         <div class="row">
             <div class="col-sm-6 p-2">
@@ -53,6 +56,7 @@
 
     {% for obj in object_list %}
     {% if obj.main_product == True  %}
+    <!-- be careful to have class="food" here for the jquery  -->
     <div id="food{{ obj.id }}" class="food" style="display:none">
         <div class="row">
             <div class="col-sm-6 p-2">
@@ -82,12 +86,11 @@
 <script>
     $(function() {
         $('button.btn-outline-dark').click(function(event){
-                $('.food').hide();
-                $('#' + $(this).val()).show();
+            $('.food').hide();
+            $('#' + $(this).val()).show();
         });
-});
+    });
 </script>
-
 
 {% endblock content %}
 

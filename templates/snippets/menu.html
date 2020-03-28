@@ -9,8 +9,8 @@
             {% if obj.menu_product == True  %}
             <div class="card card-body">
                 <span class="float-right font-weight-bold">{{ obj.price }} €</span>
-                <h6 class="text-truncate">{{ obj.name }}</h6>
-                <p class="small">{{ obj.description }}</p>
+                <h3 class="text-truncate">{{ obj.name }}</h3>
+                <p class="small text-secondary">{{ obj.description }}</p>
             </div>
             {% endif %}
             {% endfor %}

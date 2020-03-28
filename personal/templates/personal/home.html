@@ -7,8 +7,9 @@
 <section class="py-5">
     <div class="col-md-12 text-center">
         <h1 class="mb-5">Rôtisseur AF Roti</h1>
-        <p class="mb-5">Poulet roti accompagné de pommes de terre sauce orientale. La sauce est faite avec oignos - courgette - poivrons. Le tout fait maison. </p>
+        <p class="mb-5">Poulet rôti accompagné de pomme de terre sauce orientale. La sauce est faite avec oignons - courgettes - poivrons. Le tout fait maison ! </p>
         <h2>Où nous trouver ?</h2>
+
         <div class="d-flex flex-row justify-content-around flex-wrap">
             {% for market in markets %}
                 <div class="card" style="width: 15rem;">
@@ -24,8 +25,6 @@
             {% endfor %}
         </div>
     </div>
-    <div class="col-md-1"></div>
-    <div class="col-md-1"></div>
 
 </section>
 
@@ -35,6 +34,7 @@
         <h1 class="mb-5 head-title-title py-3">Besoins d'idées</h1>
     </div>
     <div class="mb-5">
+        <!-- be careful to have value="home0" here for the jquery  -->
         <button
             type="button"
             value="home0"
@@ -43,6 +43,7 @@
         </button>
         {% for obj in object_list %}
         {% if obj.main_product == True  %}
+        <!-- be careful to have dynamic here for the jquery  -->
             <button
                 type="button"
                 value="home{{ obj.id }}"
@@ -53,7 +54,7 @@
         {% endfor %}
     </div>
 
-
+    <!-- be careful to have class="home" here for the jquery  -->
     <div id="home0" class="home" style="display:block; ">
         <div class="row">
             <div class="col-sm-6 p-2">
@@ -74,23 +75,24 @@
 
     {% for obj in object_list %}
     {% if obj.main_product == True  %}
-        <div id="home{{obj.id}}" class="home" style="display:none; ">
-            <div class="row">
-                <div class="col-sm-6 p-2">
-                    <img src="{% static 'img/roti.jpg' %}" alt="Nature" class="responsiveImage" width="600">
-                </div>
-                <div class="card col-sm-6">
-                    <div class="d-flex flex-column justify-content-between card-body g-border">
-                        <div>
-                            <h1 class="card-title">{{ obj.name }}</h1>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ obj.subtitle }}</h6>
-                            <p class="card-text">{{ obj.description }}</p>
-                        </div>
-                        <h4>{{ obj.price }} €</h4>
+    <!-- be careful to have class="home" here for the jquery  -->
+    <div id="home{{obj.id}}" class="home" style="display:none; ">
+        <div class="row">
+            <div class="col-sm-6 p-2">
+                <img src="{% static 'img/roti.jpg' %}" alt="Nature" class="responsiveImage" width="600">
+            </div>
+            <div class="card col-sm-6">
+                <div class="d-flex flex-column justify-content-between card-body g-border">
+                    <div>
+                        <h1 class="card-title">{{ obj.name }}</h1>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ obj.subtitle }}</h6>
+                        <p class="card-text">{{ obj.description }}</p>
                     </div>
+                    <h4>{{ obj.price }} €</h4>
                 </div>
             </div>
         </div>
+    </div>
     {% endif %}
     {% endfor %}
 </section>
@@ -99,10 +101,10 @@
 
 <script>
     $(function() {
-            $('button.btn-outline-dark').click(function(event){
-                    $('.home').hide();
-                    $('#' + $(this).val()).show();
-            });
+        $('button.btn-outline-dark').click(function(event){
+            $('.home').hide();
+            $('#' + $(this).val()).show();
+        });
 });
 </script>
 

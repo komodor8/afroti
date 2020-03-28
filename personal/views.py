@@ -4,7 +4,7 @@ from .models import Product, Market
 class IndexSplashScreen(generic.ListView):
     template_name = 'personal/home.html'
     model = Product
-    queryset = Product.objects.filter(categorie=1)
+    queryset = Product.objects.filter(categorie=1).order_by('order')
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context

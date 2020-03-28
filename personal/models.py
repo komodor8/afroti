@@ -20,6 +20,7 @@ class Product(models.Model):
     menu_name = models.CharField(max_length=200, default='')
     menu_description = models.TextField(max_length=200, default='')
     image_name = models.CharField(max_length=200, default='')
+    order = models.PositiveSmallIntegerField(default=999)
 
     def __str__(self):
         return self.name
