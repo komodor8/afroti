@@ -9,28 +9,19 @@
         <h1 class="header-h mb-5">Rôtisseur AF Roti</h1>
         <div class="container">
             <h2>Où nous trouver ?</h2>
-            <div class="d-flex flex-row justify-content-between flex-wrap">
-
-                <div class="card col-md-4" style="width: 18rem;">
+            <div class="d-flex flex-row justify-content-around flex-wrap">
+                {% for market in markets %}
+                    <div class="card" style="width: 13rem;">
                     <img class="card-img-top" src="{% static 'img/location.jpg' %}" alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text">Marché de Nuits-saint-Georges les vendredis</p>
+                        <h5 class="card-title">{{ market.name }}</h5>
+                        <p class="card-text">Tous les {{ market.day }}</p>
                     </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">De 8h à 13h</li>
+                    </ul>
                 </div>
-
-                <div class="card col-md-4" style="width: 18rem;">
-                    <img class="card-img-top" src="{% static 'img/location.jpg' %}" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">Marché de Beaune les samedis</p>
-                    </div>
-                </div>
-
-                <div class="card col-md-4" style="width: 18rem;">
-                    <img class="card-img-top" src="{% static 'img/location.jpg' %}" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">Marché de Quetigny les dimanche</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -42,7 +33,7 @@
 
 <section class="section-padding container">
     <div class="col-md-12 text-center">
-        <h1 class="header-h mb-5">Que choisir ?</h1>
+        <h1 class="header-h mb-5">Voici ce que nous vous proposons</h1>
     </div>
     <div class="mb-5">
         <button type="button" value="home0" class="btn btn-outline-dark">Test</button>
@@ -64,16 +55,14 @@
             <div class="col-sm-6">
                 <img src="{% static 'img/roti.jpg' %}" alt="Nature" class="responsiveImage" width="600">
             </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div>
-                            <h1 class="card-title">Poulet 3/4 personnes</h1>
-                            <h6 class="card-subtitle mb-2 text-muted"></h6>
-                            <p class="card-text"></p>
-                        </div>
-                        <h4>Prix: 8,90 €</h4>
+            <div class="col-sm-6 card">
+                <div class="d-flex flex-column justify-content-between card-body">
+                    <div>
+                        <h1 class="card-title">Poulet 3/4 personnes</h1>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                        <p class="card-text"></p>
                     </div>
+                    <h4>Prix: 8,90 €</h4>
                 </div>
             </div>
         </div>
@@ -86,16 +75,14 @@
                 <div class="col-sm-6">
                     <img src="{% static 'img/roti.jpg' %}" alt="Nature" class="responsiveImage" width="600">
                 </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div>
-                                <h1 class="card-title">{{ obj.name }}</h1>
-                                <h6 class="card-subtitle mb-2 text-muted">{{ obj.subtitle }}</h6>
-                                <p class="card-text">{{ obj.description }}</p>
-                            </div>
-                            <h4>{{ obj.name }}</h4>
+                <div class="card col-sm-6">
+                    <div class="d-flex flex-column justify-content-between card-body">
+                        <div>
+                            <h1 class="card-title">{{ obj.name }}</h1>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ obj.subtitle }}</h6>
+                            <p class="card-text">{{ obj.description }}</p>
                         </div>
+                        <h4>{{ obj.price }} €</h4>
                     </div>
                 </div>
             </div>

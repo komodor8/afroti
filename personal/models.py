@@ -16,7 +16,7 @@ class Product(models.Model):
     name = models.CharField(max_length=200, default='')
     subtitle = models.TextField(max_length=200, default='')
     description = models.TextField(max_length=200, default='')
-    price = models.IntegerField(default=0)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
     menu_name = models.CharField(max_length=200, default='')
     menu_description = models.TextField(max_length=200, default='')
     image_name = models.CharField(max_length=200, default='')

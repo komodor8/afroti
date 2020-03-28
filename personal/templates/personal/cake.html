@@ -41,16 +41,14 @@
             <div class="col-sm-6">
                 <img src="{% static 'img/gateau1.jpg' %}" alt="Nature" class="responsiveImage" width="600">
             </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div>
-                            <h5 class="card-title">Corne de gazelle</h5>
-                            <h6 class="card-subtitle mb-2 text-muted"></h6>
-                            <p class="card-text"></p>
-                        </div>
-                        <h4>Prix: 5 € / kg</h4>
+            <div class="col-sm-6 card">
+                <div class="d-flex flex-column justify-content-between card-body">
+                    <div>
+                        <h5 class="card-title">Corne de gazelle</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                        <p class="card-text"></p>
                     </div>
+                    <h4>Prix: 5 € / kg</h4>
                 </div>
             </div>
         </div>
@@ -58,21 +56,19 @@
 
     {% for obj in object_list %}
     {% if obj.main_product == True  %}
-        <div id="cake{{obj.id}}" class="container food" style="display:none">
+        <div id="cake{{ obj.id }}" class="container food" style="display:none">
         <div class="row">
             <div class="col-sm-6">
                 <img src="{% static 'img/gateau1.jpg' %}" alt="Nature" class="responsiveImage" width="600">
             </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div>
-                            <h5 class="card-title">{{obj.name}}</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">{{obj.subtitle}}</h6>
-                              <p class="card-text">{{obj.description}}</p>
-                        </div>
-                        <h4>{{obj.price}}</h4>
+            <div class="col-sm-6 card">
+                <div class="d-flex flex-column justify-content-between card-body">
+                    <div>
+                        <h5 class="card-title">{{ obj.name }}</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">{{ obj.subtitle }}</h6>
+                          <p class="card-text">{{ obj.description }}</p>
                     </div>
+                    <h4>{{ obj.price }} €</h4>
                 </div>
             </div>
         </div>
