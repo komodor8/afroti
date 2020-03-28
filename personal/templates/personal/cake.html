@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-12 text-center marb-35">
             <h1>Gâteaux traditionels</h1>
-            <p class="header-p"></p>
+            <p>Gâteaux marocains - de toutes les sortes.</p>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-1"></div>
@@ -16,8 +16,8 @@
 </section>
 
 <section class="section-padding container">
-    <div class="col-md-12 text-center">
-        <h1 class="mb-5">Que choisir ?</h1>
+    <div class="col-md-12 text-center head-title-bg">
+        <h1 class="mb-5 head-title-title py-3">Besoins d'idées</h1>
     </div>
 
     <div class="mb-5">
@@ -34,9 +34,9 @@
         {% endfor %}
     </div>
 
-    <div id="cake0" class="food" style="display:block; ">
+    <div id="cake0" class="cake" style="display:block; ">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 p-2">
                 <img src="{% static 'img/gateau1.jpg' %}" alt="Nature" class="responsiveImage" width="600">
             </div>
             <div class="col-sm-6 card">
@@ -54,13 +54,13 @@
 
     {% for obj in object_list %}
     {% if obj.main_product == True  %}
-        <div id="cake{{ obj.id }}" class="food" style="display:none">
+        <div id="cake{{ obj.id }}" class="cake" style="display:none">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 p-2">
                 <img src="{% static 'img/gateau1.jpg' %}" alt="Nature" class="responsiveImage" width="600">
             </div>
             <div class="col-sm-6 card">
-                <div class="d-flex flex-column justify-content-between card-body">
+                <div class="d-flex flex-column justify-content-between card-body g-border">
                     <div>
                         <h5 class="card-title">{{ obj.name }}</h5>
                           <h6 class="card-subtitle mb-2 text-muted">{{ obj.subtitle }}</h6>
@@ -81,9 +81,10 @@
 <script>
     $(function() {
         $('button.btn-outline-dark').click(function(event){
-            $('.cake').hide();
-            $('#' + $(this).val()).show();
-        });
+                    $('.cake').hide();
+                    $('#' + $(this).val()).show();
+            });
+    })
 </script>
 
 

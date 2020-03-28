@@ -7,6 +7,7 @@
 <section class="py-5">
     <div class="col-md-12 text-center">
         <h1 class="mb-5">Rôtisseur AF Roti</h1>
+        <p class="mb-5">Poulet roti accompagné de pommes de terre sauce orientale. La sauce est faite avec oignos - courgette - poivrons. Le tout fait maison. </p>
         <h2>Où nous trouver ?</h2>
         <div class="d-flex flex-row justify-content-around flex-wrap">
             {% for market in markets %}
@@ -30,8 +31,8 @@
 
 <hr>
 <section class="py-5 container">
-    <div class="col-md-12 text-center">
-        <h1 class="mb-5">Voici ce que nous vous proposons</h1>
+    <div class="col-md-12 text-center head-title-bg">
+        <h1 class="mb-5 head-title-title py-3">Besoins d'idées</h1>
     </div>
     <div class="mb-5">
         <button
@@ -55,13 +56,13 @@
 
     <div id="home0" class="home" style="display:block; ">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 p-2">
                 <img src="{% static 'img/roti.jpg' %}" alt="Nature" class="responsiveImage" width="600">
             </div>
             <div class="col-sm-6 card ">
                 <div class="d-flex flex-column justify-content-between card-body g-border">
                     <div>
-                        <h1 class="card-title">Poulet 3/4 personnes</h1>
+                        <h1 class="card-title">Poulet 3 / 4 personnes</h1>
                         <h6 class="card-subtitle mb-2 text-muted">subtitle</h6>
                         <p class="card-text">description</p>
                     </div>
@@ -75,7 +76,7 @@
     {% if obj.main_product == True  %}
         <div id="home{{obj.id}}" class="home" style="display:none; ">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 p-2">
                     <img src="{% static 'img/roti.jpg' %}" alt="Nature" class="responsiveImage" width="600">
                 </div>
                 <div class="card col-sm-6">
