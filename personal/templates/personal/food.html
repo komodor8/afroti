@@ -21,14 +21,14 @@
     </div>
     <div class="mb-5">
         <!-- be careful to have value="food0" here for the jquery  -->
-        <button type="button" value="food0" class="btn btn-outline-dark p-1">Test</button>
+        <button type="button" value="food0" class="btn btn-outline-dark p-1 my-1">{{ best_seller.name }}</button>
         {% for obj in object_list %}
         {% if obj.main_product == True  %}
         <!-- be careful to have dynamic here for the jquery  -->
         <button
             type="button"
             value="food{{ obj.id }}"
-            class="btn btn-outline-dark p-1">
+            class="btn btn-outline-dark p-1 my-1">
             {{ obj.name }}
         </button>
         {% endif %}
@@ -39,16 +39,16 @@
     <div id="food0" class="food" style="display:block; ">
         <div class="row">
             <div class="col-sm-6 p-2">
-                <img src="{% static 'img/res01.jpg' %}" alt="Nature" class="responsiveImage" width="600">
+                <img src="{% static '' %}img/food/{{ best_seller.image_name }}"  alt="{{ best_seller.name }}" class="responsiveImage" width="600">
             </div>
             <div class="card col-sm-6">
                 <div class="d-flex flex-column justify-content-between card-body g-border">
                     <div>
-                        <h5 class="card-title">Couscous Royal</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">subtitle</h6>
-                        <p class="card-text">Merguez, boulette de viande, poulet</p>
+                        <h5 class="card-title">{{ best_seller.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ best_seller.subtitle }}</h6>
+                        <p class="card-text">{{ best_seller.description }}</p>
                     </div>
-                    <h4>20.00 € / personne</h4>
+                    <h4>{{ best_seller.price }} / personne</h4>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
     <div id="food{{ obj.id }}" class="food" style="display:none">
         <div class="row">
             <div class="col-sm-6 p-2">
-                <img src="{% static 'img/res01.jpg' %}" alt="Nature" class="responsiveImage" width="600">
+                <img src="{% static '' %}img/food/{{ obj.image_name }}" alt="{{ obj.name }}" class="responsiveImage" width="600">
             </div>
             <div class="col-sm-6 card">
                 <div class="d-flex flex-column justify-content-between card-body g-border">
@@ -69,7 +69,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">{{ obj.subtitle }}</h6>
                         <p class="card-text">{{ obj.description }}</p>
                     </div>
-                    <h4>{{ obj.price }}</h4>
+                    <h4>{{ obj.price }} / personne</h4>
                 </div>
             </div>
         </div>

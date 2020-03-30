@@ -22,14 +22,14 @@
 
     <div class="mb-5">
         <!-- be careful to have value="cake0" here for the jquery  -->
-        <button type="button" value="cake0" class="btn btn-outline-dark p-1">Gateau arabes 1</button>
+        <button type="button" value="cake0" class="btn btn-outline-dark p-1 my-1">{{ best_seller.name }}</button>
         {% for obj in object_list %}
         {% if obj.main_product == True  %}
         <!-- be careful to have dynamic here for the jquery  -->
         <button
             type="button"
             value="cake{{ obj.id }}"
-            class="btn btn-outline-dark p-1">
+            class="btn btn-outline-dark p-1 my-1">
             {{ obj.name }}
         </button>
         {% endif %}
@@ -40,16 +40,16 @@
     <div id="cake0" class="cake" style="display:block; ">
         <div class="row">
             <div class="col-sm-6 p-2">
-                <img src="{% static 'img/gateau1.jpg' %}" alt="Nature" class="responsiveImage" width="600">
+                <img src="{% static '' %}img/cake/{{ best_seller.image_name }}" alt="{{ best_seller.name }}" class="responsiveImage" width="600">
             </div>
             <div class="col-sm-6 card">
                 <div class="d-flex flex-column justify-content-between card-body g-border">
                     <div>
-                        <h5 class="card-title">Corne de gazelle</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">subtitle</h6>
-                        <p class="card-text">description</p>
+                        <h5 class="card-title">{{ best_seller.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ best_seller.subtitle }}</h6>
+                        <p class="card-text">{{ best_seller.description }}</p>
                     </div>
-                    <h4>5.00 € / kg</h4>
+                    <h4>{{ best_seller.price }} / kg</h4>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
         <div id="cake{{ obj.id }}" class="cake" style="display:none">
         <div class="row">
             <div class="col-sm-6 p-2">
-                <img src="{% static 'img/gateau1.jpg' %}" alt="Nature" class="responsiveImage" width="600">
+                <img src="{% static '' %}img/cake/{{ obj.image_name }}" alt="{{ obj.name }}" class="responsiveImage" width="600">
             </div>
             <div class="col-sm-6 card">
                 <div class="d-flex flex-column justify-content-between card-body g-border">

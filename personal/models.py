@@ -11,15 +11,15 @@ class Categorie(models.Model):
 
 class Product(models.Model):
     categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE)
-    main_product = models.BooleanField(default=False)
-    menu_product = models.BooleanField(default=False)
-    name = models.CharField(max_length=200, default='')
-    subtitle = models.TextField(max_length=200, default='')
-    description = models.TextField(max_length=200, default='')
+    main_product = models.BooleanField(default=True)
+    menu_product = models.BooleanField(default=True)
+    name = models.CharField(max_length=200, null=True)
+    subtitle = models.TextField(max_length=200, null=True)
+    description = models.TextField(max_length=200, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    menu_name = models.CharField(max_length=200, default='')
-    menu_description = models.TextField(max_length=200, default='')
-    image_name = models.CharField(max_length=200, default='')
+    menu_name = models.CharField(max_length=200, null=True)
+    menu_description = models.TextField(max_length=200, null=True)
+    image_name = models.CharField(max_length=200, null=True)
     order = models.PositiveSmallIntegerField(default=999)
 
     def __str__(self):
@@ -27,10 +27,10 @@ class Product(models.Model):
 
 
 class Market(models.Model):
-    name = models.CharField(max_length=200, default='')
-    day = models.CharField(max_length=200, default='')
-    location = models.CharField(max_length=200, default='')
-    address = models.CharField(max_length=200, default='')
+    name = models.CharField(max_length=200)
+    day = models.CharField(max_length=200)
+    location = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
